@@ -1,8 +1,12 @@
 $("#boton-usuarios").on("click", getUsers); //Convertir datos en string de consulta.
 
 function getUsers() {
+  var code = document.getElementById("intro").value;
   $.ajax({
-    url: 'https://jsonplaceholder.typicode.com/comments?postId=1',
+    url: 'https://jsonplaceholder.typicode.com/comments?postId=' + code,
+    type: 'GET',
+
+    
     success: function(respuesta) {
 
       var listaUsuarios = $("#lista-usuarios");
